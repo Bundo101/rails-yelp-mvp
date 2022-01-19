@@ -12,6 +12,18 @@
   </head>
 
   <body>
+
+    <div class="container">
+
+    <nav>
+      <ul>
+        <li id="homepage"><%= link_to "Restaurant List", restaurants_path %></li>
+        <li id="new-article"><%= link_to  "Add New Restaurant", new_restaurant_path %></li>
+      </ul>
+    </nav>
+
+  </div>
+
     <%= yield %>
   </body>
 </html>

@@ -18,7 +18,15 @@ puts 'Seeding restaurant data'
     address: Faker::Address.street_address,
     category: categories.sample
   )
-  puts "restaurant #{restaurant.id} created"
+
+  3.times do
+    review = Review.new(
+      rating: rand(0..5),
+      content: Faker::Restaurant.review
+    )
+    review.restaurant = restaurant
+    review.save
+  end
 end
 
 puts "done"
